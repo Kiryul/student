@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function check()
+{
+   	 if (window.XMLHttpRequest) 
+	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+	     xmlhttp=new XMLHttpRequest(); 
+	  } 
+	else {// code for IE6, IE5 
+	   xmlhttp=new ActiveXObject("Microsoft.XMLHTTP"); 
+	  } 
+ 	 value=document.getElementById("sno").value;
+	 xmlhttp.open("get", "check?sno="+value, false);
+	 xmlhttp.onreadystatechange=function() 
+	 {    
+		 //alert(xmlhttp.readyState)
+		 if (xmlhttp.readyState==4 && xmlhttp.status==200) 
+	     { 
+			 res=xmlhttp.responseText;
+			 if(res=="yes")
+				res="恭喜该账户可以使用！";
+			 else
+				 res="该账户已被注册！"; 
+	        document.getElementById("hint").innerHTML=res;
+	     } 
+	 } 
+    xmlhttp.send();
+   	 
+   	 
+}
+
+
+
+</script>
+</head>
+<body>
+<h1> 欢迎来到注册页面，请按提示输入信息</h1>
+<hr>
+<br>请输入学号：<input type="text" onblur="check()" id="sno" />
+<br>请输入姓名：<input type="text" id="sname"/>
+<br>请输入密码：<input type="password" id="pwd"/>
+   <button onclick="check()">注册</button>
+<div id="hint"></div>
+
+</body>
+</html>

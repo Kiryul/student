@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <jdbc>
+       <driver>com.mysql.jdbc.Driver</driver>
+       <url>jdbc:mysql://localhost:3306/db201907d?characterEncoding=UTF-8</url>
+       <user>root</user>
+       <pwd></pwd>
+       <pwdcount>3</pwdcount>
+       <e111>Register successful!</e111>
+       <e222>EROR : Register failed! Sno already exist!</e222>
+       <e100>EROR : Can not found the user!</e100>
+       <e202>EROR : Password error! Today you have only two chances!</e202>
+       <e201>EROR : Password error! Today you have only one chance!</e201>
+       <e200>EROR : Password error! Today you have been locked!</e200>
+       <e300>EROR : The user is locked!</e300>
+       <e600>Login successed!</e600>
+    </jdbc>
+    
+
